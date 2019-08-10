@@ -1,0 +1,115 @@
+@charset "UTF-8";
+body{
+    background-color: rgba(160, 215, 224, 0.69);
+}
+.loading{
+    position: absolute;
+    top:173px;
+}
+@font-face {
+    font-family: myFirstname;
+    src:url(../image/good.ttf);
+}
+#write-list{
+    list-style-type: none;
+    font-family: myFirstname;
+    font-size: 20px;
+    font-weight: bold;
+    color:black;
+}
+.write1,.write2,.write3{
+    position: absolute;
+    top:240px;
+    left: 30px;
+    right: 30px;
+    border-radius: 10px;
+    background-color: #03a9f442;
+    /*background-color: rgba(58, 139, 224, 0.68);*/
+}
+.write1:after{
+    content: '';
+    position: absolute;
+    width:0;
+    height: 0;
+    border-top:30px solid #03a9f442;
+    border-right:25px solid transparent;
+    border-bottom:50px solid transparent;
+    border-left:25px solid transparent;
+    top: 100%;
+    left: 17%;
+    margin-left: -15px;
+}
+.write2:after{
+    content: '';
+    position: absolute;
+    width:0;
+    height: 0;
+    border-top:24px solid #03a9f442;
+    border-right:25px solid transparent;
+    border-bottom:50px solid transparent;
+    border-left:25px solid transparent;
+    top: 100%;
+    left: 47%;
+    margin-left: -15px;
+}
+.write3:after{
+    content: '';
+    position: absolute;
+    width:0;
+    height: 0;
+    border-top:27px solid #03a9f442;
+    border-right:25px solid transparent;
+    border-bottom:50px solid transparent;
+    border-left:25px solid transparent;
+    top: 100%;
+    left: 78%;
+    margin-left: -15px;
+}
+.write1,.write2{
+    opacity: 0;
+}
+.img1,.img2,.img3{
+    width: 55px;
+}
+.img1{
+    position: absolute;
+    top:464px;
+    left:64px;
+}
+.img2{
+    position: absolute;
+    top:464px;
+    left:155px;
+}
+.img3{
+    position: absolute;
+    top: 464px;
+    left:248px;
+}
+.active1{
+    position: absolute;
+    top:464px;
+    left: 64px;
+    width: 55px;
+    box-shadow: 0 0 10px 10px rgba(255,255,255,.6);
+}
+.active2{
+    position: absolute;
+    top:464px;
+    left:155px;
+    width:55px;
+    box-shadow: 0 0 10px 10px rgba(255,255,255,.6);
+}
+.active3{
+    position: absolute;
+    top: 464px;
+    left:248px;
+    width: 55px;
+    box-shadow: 0 0 10px 10px rgba(255,255,255,.6);
+}
+#index-three{
+    margin: 0;
+    width:100vw;
+    height:100vh;
+
+}

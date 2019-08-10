@@ -1,0 +1,15 @@
+body {
+  background-color: rgba(160, 215, 224, 0.69);
+}
+body .box {
+  display: none;
+}
+body .render {
+  width: 100%;
+  display: block;
+  margin: 10% auto;
+}
+body .render span {
+  font-size: 70px;
+  font-weight: 300;
+}
