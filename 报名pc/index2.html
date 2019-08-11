@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css\style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="img/微信图片_20190811165846.png" alt="" class="blur">
+        <div class="panel">
+            <div class="content login">
+                <div class="switch">
+                    <span id='login' class='active'><a href="index.html" style="text-decoration: none; color: #FF82AB;">登录</a></span><span>/</span><span id='signup'><a href="index2.html" style="text-decoration: none; color: #FF82AB;">注册</a></span>
+                </div>
+                <form action="">
+                   <!--  <div id='qq' class="input"  placeholder='QQ'><input type="text"></div> -->
+                        <div class="input" placeholder='姓名'><input type="text" id="input4" style= "background-color:transparent "></div>
+                      <div class="input" placeholder='专业班级'><input type="text" id="input5" style= "background-color:transparent "></div>
+                    <!--  <div class="input" placeholder='学号'><input type="password" id="input6"></div> -->
+                    <div    class="input" placeholder='手机' ><input type="password" id="sellphone" style= "background-color:transparent "></div>
+                       <div  class="input" placeholder='密码'><input type="password"  id="password" style= "background-color:transparent "></div>
+                    <div id='repeat' class="input" placeholder='Repeat'><input type="password" ></div>
+                    <span>Forget?</span>
+                    <button onclick="checkSubmit()">LOGIN</button>
+                </form>     
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script>
+   $('#login').click(function(){
+        $('.switch span').removeClass('active');
+        $(this).addClass('active');
+
+        $(this).parents('.content').removeClass('signup');
+        $(this).parents('.content').addClass('login');
+
+        $('form button').text('LOGIN')
+
+    })
+
+    $('#signup').click(function(){
+        $('.switch span').removeClass('active');
+        $(this).addClass('active');
+
+        $(this).parents('.content').removeClass('login');
+        $(this).parents('.content').addClass('signup');
+
+        $('form button').text('SIGNUP');
+    })
+
+    $('.input input').on('focus',function(){
+        $(this).parent().addClass('focus');
+    })
+
+    $('.input input').on('blur',function(){
+        if($(this).val() === '')
+            $(this).parent().removeClass('focus');
+    })
+
+
+    function checkSubmit(){
+        // 去除前后空格
+        var userPhone = $.trim($('#sellphone').val());
+        var apassword = $.trim($('#password').val());
+
+            if(apassword == ''){
+            alert('密码不能为空！');
+            return false;
+        }
+        if(userPhone == ''){
+            alert('手机号码不能为空！');
+            return false;
+        }
+        if(!checkMobile(userPhone)){
+            alert('手机号码格式不对!');
+            return false;
+        }
+
+    }
+
+function checkSubmit(){
+        var userPhone = $.trim($('#sellphone').val());
+        var password = $.trim($('#password').val());
+        var rpassword = $.trim($('#input3').val());
+        var oname = $.trim($('#input4').val());
+        var oclass = $.trim($('#input5').val());
+        var onum = $.trim($('#input6').val());
+        if(userPhone == ''){
+            alert('你得四想奈打呢，撒都不输');
+            return false;
+        }
+         if(!checkMobile(userPhone)){
+            alert('请问你的手机号是个什么杂种');
+            return false;
+        }
+        if(oname == ''){
+            alert('无名氏你好');
+            return false;
+        }
+        if(oclass == ''){
+            alert('班级呢');
+            return false;
+        }
+        if(onum == ''){
+            alert('学号呢');
+            return false;
+        }
+       
+        if(password == ''){
+            alert('不输入密码你登你妈呢');
+            return false;
+        }
+
+    }
+
+</script>
+</html>
